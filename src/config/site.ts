@@ -1,19 +1,25 @@
-import { SiteConfig } from "@/types"
+export const siteName =
+  process.env.NEXT_PUBLIC_SITE_NAME || "SEO Next.js Starter"
 
-import { env } from "@/env.mjs"
+export const title =
+  process.env.NEXT_PUBLIC_TITLE ||
+  "SEO Next.js Starter - A Starter Template for SEO Optimized Next.js Projects"
 
-export const siteConfig: SiteConfig = {
-  name: "next-shadcn-boilerplate",
-  author: "developedbyumair",
-  description:
-    "Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and configs setup.",
-  keywords: ["Next.js", "React", "Tailwind CSS", "Radix UI", "shadcn/ui"],
-  url: {
-    base: env.NEXT_PUBLIC_APP_URL,
-    author: "https://github.com/developedbyumair",
-  },
-  links: {
-    github: "hhttps://github.com/Survtyx/next-shadcn-boilerplate",
-  },
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
-}
+export const description =
+  process.env.NEXT_PUBLIC_DESCRIPTION ||
+  "A simple and easy-to-use starter template for building SEO optimized Next.js applications with best practices and performance in mind."
+
+// Last baseURL
+const defaultBaseURL = "https://seo-nextjs-starter.vercel.app"
+
+// Vercel baseURL, make sure it's a valid URL
+const VERCEL_URL =
+  process.env.NEXT_PUBLIC_VERCEL_URL &&
+  `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+
+// meta base url
+export const baseURL =
+  process.env.NEXT_PUBLIC_URL ||
+  VERCEL_URL ||
+  (globalThis.location && globalThis.location.origin) ||
+  defaultBaseURL

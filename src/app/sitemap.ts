@@ -1,0 +1,16 @@
+import type { MetadataRoute } from "next"
+
+import { baseURL } from "@/config/site"
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: baseURL,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseURL}/about`,
+      lastModified: new Date(),
+    },
+  ]
+}

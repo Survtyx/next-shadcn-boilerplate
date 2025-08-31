@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
+import { baseURL, description, siteName } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
@@ -12,15 +12,15 @@ export default function Home() {
       <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
         <Icons.logo className="h-16 w-16" />
         <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl">
-          {siteConfig.name}
+          {siteName}
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          {siteConfig.description}
+          {description}
         </p>
         <div className="flex gap-2">
           <Link
             rel="preload"
-            href={siteConfig.links.github}
+            href={baseURL}
             as="style"
             target="_blank"
             className={cn(buttonVariants({ size: "default" }))}
